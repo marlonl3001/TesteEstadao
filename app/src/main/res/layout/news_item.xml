@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="news"
+            type="br.com.mdr.testeestadaao.model.business.News" />
+    </data>
+    <com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin8"
+        android:layout_marginEnd="@dimen/margin16"
+        android:layout_marginStart="@dimen/margin16"
+        android:layout_marginTop="@dimen/margin8">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin16">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtChapeu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{news.chapeu}"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_blue_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Teste"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtTitulo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{news.titulo}"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_20"
+                tools:text="Lazer, compras e transporte: o que a pandemia mudou para sempre?"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtChapeu"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgNews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin8"
+                android:contentDescription="@string/image_description"
+                app:layout_constraintTop_toBottomOf="@id/txtTitulo"
+                urlload="@{news.imagem}"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtLinhaFina"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin8"
+                android:text="@{news.linhaFina}"
+                android:textColor="@color/black"
+                tools:text="Líder do governo na Câmara, Ricardo Barros defende nepotismo no setor público."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgNews"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
